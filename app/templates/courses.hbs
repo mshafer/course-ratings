@@ -1,1 +1,12 @@
-A list of courses will go here
+<h3>Courses</h3>
+
+
+{{#each model as |course|}}
+    <div class="ui segment">
+        <h4>{{course.name}}</h4>
+
+        <p>
+          {{course.rating}} / 5 - {{course.comment}}
+        </p>
+    </div>
+{{/each}}
