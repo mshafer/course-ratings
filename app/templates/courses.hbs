@@ -1,5 +1,24 @@
 <h3>Courses</h3>
 
+<div class="ui raised segment">
+    <div class="ui form">
+        <div class="three fields">
+            <div class="field">
+                <label>Name</label>
+                {{input type="text" value=name}}
+            </div>
+            <div class="field">
+                <label>Rating</label>
+                {{input type="number" value=rating}}
+            </div>
+            <div class="field">
+                <label>Comments</label>
+              {{input type="text" value=comment}}
+            </div>
+        </div>
+        <button class="ui green button">Add Course</button>
+    </div>
+</div>
 
 {{#each model as |course|}}
     <div class="ui segment">
