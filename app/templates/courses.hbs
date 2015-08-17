@@ -13,7 +13,7 @@
             </div>
             <div class="field">
                 <label>Comments</label>
-              {{input type="text" value=comment}}
+                {{input type="text" value=comment}}
             </div>
         </div>
         <button class="ui green button" {{action 'addRating'}}>Add Rating</button>
@@ -23,7 +23,6 @@
 {{#each model as |course|}}
     <div class="ui segment">
         <h4>{{course.name}}</h4>
-
         <p>
           {{course.rating}} / 5 - {{course.comment}}
         </p>
