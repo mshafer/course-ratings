@@ -8,7 +8,17 @@ export default Ember.Controller.extend({
     return name.length === 0 || !rating;
   }.property('name', 'rating'),
 
-  sortedCourses: Ember.computed.sort('model', function(a, b) {
+  filteredCourses: function() {
+    let searchText = this.get('searchText') || "";
+    searchText = searchText.toLowerCase();
+
+    return this.get('model').filter(function(course) {
+      let courseName = course.name.toLowerCase();
+      return courseName.indexOf(searchText) > -1;
+    });
+  }.property('model.@each.name', 'searchText'),
+
+  sortedCourses: Ember.computed.sort('filteredCourses', function(a, b) {
     return b.rating - a.rating;
   }),
 
