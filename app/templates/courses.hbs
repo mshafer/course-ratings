@@ -16,7 +16,9 @@
                 {{input type="text" value=comment}}
             </div>
         </div>
-        <button class="ui green button" {{action 'addRating'}}>Add Rating</button>
+        <button class="ui green button" disabled={{inputsAreInvalid}} {{action 'addRating'}}>
+            Add Rating
+        </button>
     </div>
 </div>
 

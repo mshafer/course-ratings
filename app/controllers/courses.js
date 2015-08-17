@@ -1,6 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  inputsAreInvalid: function() {
+    const name = this.get('name') || "";
+    const rating = this.get('rating');
+
+    return name.length === 0 || !rating;
+  }.property('name', 'rating'),
+
   actions: {
     addRating: function() {
       const newRating = {
