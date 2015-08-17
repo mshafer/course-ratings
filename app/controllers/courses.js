@@ -8,6 +8,10 @@ export default Ember.Controller.extend({
     return name.length === 0 || !rating;
   }.property('name', 'rating'),
 
+  sortedCourses: Ember.computed.sort('model', function(a, b) {
+    return b.rating - a.rating;
+  }),
+
   actions: {
     addRating: function() {
       const newRating = {
