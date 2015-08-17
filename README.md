@@ -10,3 +10,5 @@ $ npm install
 $ bower install
 $ ember server
 ```
+
+Then open [http://localhost:4200/](http://localhost:4200/)
